@@ -14,9 +14,8 @@ class CryptoAPIController implements CryptoAPIControllerInterface {
     async rate(req: Request, res: Response): Promise<void> {
         try {
             const rate = await this.bitcoinRateService.getBitcoinRate();
-            res.status(StatusCodes.OK).send({rate});
+            res.status(StatusCodes.OK).send(rate.toString());
         } catch (e) {
-            console.log(e);
             res.status(StatusCodes.BAD_REQUEST).send();
         }
     }
