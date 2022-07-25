@@ -1,3 +1,3 @@
 export enum HttpMessages {
-    EMAIL_ADDED = 'E-mail додано'
+  EMAIL_ADDED = "E-mail додано",
 }

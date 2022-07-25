@@ -1,3 +1,3 @@
 export interface ItemProps {
-    email: string;
+  email: string;
 }

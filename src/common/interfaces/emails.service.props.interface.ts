@@ -1,5 +1,5 @@
-import {Repository} from "../types/repository.type";
+import { Repository } from "../types/repository.type";
 
 export interface EmailsServicePropsInterface {
-    repository: Repository;
+  repository: Repository;
 }

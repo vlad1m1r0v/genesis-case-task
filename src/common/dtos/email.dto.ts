@@ -1,12 +1,11 @@
 interface EmailDtoProps {
-    email: string
+  email: string;
 }
 
 export class EmailDto {
-    email: string;
+  email: string;
 
-    constructor({email}: EmailDtoProps) {
-        this.email = email;
-    }
-
+  constructor({ email }: EmailDtoProps) {
+    this.email = email;
+  }
 }

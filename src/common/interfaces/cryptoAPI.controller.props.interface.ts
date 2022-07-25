@@ -1,5 +1,5 @@
-import {BitcoinRateService} from "../types/cryptoAPI.service.type";
+import { BitcoinRateService } from "../types/cryptoAPI.service.type";
 
 export interface CryptoAPIControllerPropsInterface {
-    bitcoinRateService: BitcoinRateService
+  bitcoinRateService: BitcoinRateService;
 }

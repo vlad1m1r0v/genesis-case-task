@@ -1,7 +1,7 @@
-import {ItemProps} from "./item.props.interface";
+import { ItemProps } from "./item.props.interface";
 
 export interface RepositoryInterface {
-    save: (item: ItemProps) => Promise<void>;
+  save: (item: ItemProps) => Promise<void>;
 
-    find(predicate: (item: ItemProps) => boolean): Promise<ItemProps | null>;
+  find(predicate: (item: ItemProps) => boolean): Promise<ItemProps | null>;
 }

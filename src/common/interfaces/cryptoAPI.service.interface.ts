@@ -1,3 +1,3 @@
 export interface CryptoAPIServiceInterface {
-    getBitcoinRate: () => Promise<number>
+  getBitcoinRate: () => Promise<number>;
 }
