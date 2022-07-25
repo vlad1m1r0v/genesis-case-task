@@ -27,6 +27,14 @@ class EmailsService implements EmailsServiceInterface {
       throw e;
     }
   }
+
+  async selectAll(): Promise<EmailDto[]> {
+    try {
+      return await this.repository.selectAll();
+    } catch (e) {
+      throw e;
+    }
+  }
 }
 
 export default EmailsService;

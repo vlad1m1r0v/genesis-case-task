@@ -6,6 +6,15 @@ import { ItemProps } from "../common/interfaces/item.props.interface";
 const STORAGE_DIR = path.join(__dirname, "..", "..", "emails.json");
 
 class EmailRepository implements RepositoryInterface {
+  async selectAll(): Promise<ItemProps[]> {
+    try {
+      const emailsJSON = await fs.readFile(STORAGE_DIR, "utf-8");
+      return JSON.parse(emailsJSON) as ItemProps[];
+    } catch (e) {
+      throw e;
+    }
+  }
+
   async save(item: ItemProps): Promise<void> {
     try {
       const emailsJSON = await fs.readFile(STORAGE_DIR, "utf-8");

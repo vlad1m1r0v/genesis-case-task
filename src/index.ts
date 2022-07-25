@@ -4,11 +4,18 @@ import cors from "cors";
 import { PORT } from "./configs/config";
 import emailsController from "./controllers/emails";
 import cryptoAPIController from "./controllers/cryptoAPI";
+import senderController from "./controllers/sender";
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+app.get(
+  "/rate",
+  async (req: Request, res: Response) =>
+    await cryptoAPIController.rate(req, res)
+);
 
 app.post(
   "/subscribe",
@@ -16,10 +23,17 @@ app.post(
   async (req: Request, res: Response) =>
     await emailsController.subscribe(req, res)
 );
+
 app.get(
   "/rate",
   async (req: Request, res: Response) =>
     await cryptoAPIController.rate(req, res)
+);
+
+app.post(
+  "/sendEmails",
+  async (req: Request, res: Response) =>
+    await senderController.sendEmails(req, res)
 );
 
 app.listen(PORT, async () => {
