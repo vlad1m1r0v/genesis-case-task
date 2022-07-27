@@ -1,5 +1,5 @@
 import nodemailer from "nodemailer";
-import { EMAIL, USER, PASS } from "../../configs/config";
+import { USER, PASS } from "../../configs/config";
 import {
   SendEmailPropsInterface,
   SenderServiceInterface,
