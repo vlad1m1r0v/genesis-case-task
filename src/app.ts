@@ -24,12 +24,6 @@ const bootstrap = (app: Express) => {
             await emailsController.subscribe(req, res)
     );
 
-    app.get(
-        "/rate",
-        async (req: Request, res: Response) =>
-            await cryptoAPIController.rate(req, res)
-    );
-
     app.post(
         "/sendEmails",
         async (req: Request, res: Response) =>
