@@ -6,7 +6,7 @@ const logger = function (req: Request, res: Response, next: NextFunction) {
     const url = req.originalUrl;
     const port = process.env.PORT;
     const fullUrl = `${protocol}://${host}:${port}${url}`
-    console.log(`[logger]:  DATE: ${new Date().toLocaleTimeString()} URL: ${fullUrl}`)
+    console.log(`[logger]: DATE: ${new Date().toLocaleTimeString()} URL: ${fullUrl}`)
     next();
 };
 
