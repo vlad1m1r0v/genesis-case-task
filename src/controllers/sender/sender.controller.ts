@@ -3,6 +3,7 @@ import { Mailer } from "../../common/types/sender.service.type";
 import { BitcoinRateService } from "../../common/types/cryptoAPI.service.type";
 import { EmailService } from "../../common/types/emails.service.type";
 import { StatusCodes } from "../../common/enums/statuscodes.enums";
+import { HttpMessages } from "../../common/enums/httpmessages.enums";
 import { Request, Response } from "express";
 
 interface SenderControllerPropsInterface {
@@ -31,7 +32,7 @@ class SenderController implements SenderControllerInterface {
       const rate = await this.bitcoinRateService.getBitcoinRate();
       const receivers = await this.emailService.selectAll();
       await this.mailer.sendEMails({ receivers, bitcoinRate: rate.toString() });
-      res.status(StatusCodes.OK).send();
+      res.status(StatusCodes.OK).send(HttpMessages.EMAILS_SENT);
     } catch (e) {
       res.status(StatusCodes.BAD_REQUEST).send();
     }
